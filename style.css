@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --background-color: #000;
+    --tableHead-color: #092D38;
+    --tableBody-color: #4E5455;
+    --btn-fav-standard: #065E7C;
+    --btn-fav-hover: #FFF;
+    --btn-remove: #F75A68;
+    --font-color: #E1E1E6;
+}
+
+body {
+    background-color: var(--background-color);
+    font-size: 2rem;
+}
+
+body * {
+    font-family: 'Roboto', sans-serif;
+    color: var(--font-color);
+
+    font-weight: 700;
+
+}
+
+#content {
+    padding: 2rem;
+    max-width: 1120px;
+    height: 300px;
+
+    margin: 0 auto;
+}
+
+header {
+    margin-top: 8.7rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    gap: .8rem;
+}
+#sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.search input {
+    padding-left: 8px;
+    gap: 8px;
+    width: 46.2rem;
+    height: 4.8rem;
+
+    background: #06181C;
+    border-radius: 5px;
+
+    border: 0;
+
+
+}
+
+.search button {
+    display: flex;
+    flex-direction: row;
+
+    border: 0;
+
+    align-items: center;
+    justify-content: center;
+    padding: 12px 32px;
+    gap: 8px;
+
+    width: 17rem;
+    height: 4.8rem;
+    /* left: 470px; */
+
+
+    background: var(--btn-fav-standard);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background: var(--btn-fav-hover);
+    color: var(--btn-fav-standard);
+    border-radius: 5px;
+}
+
+.search button:hover svg path {
+    fill: var(--btn-fav-standard);
+}
+
+
+
+
+
+table {
+    width: 100%;
+    margin-top: 8.7rem;
+    border-collapse: collapse;
+    overflow:hidden;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px #4A808C;
+    border-radius: 12px;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+}
+/*  */
+table tbody{
+    position: sticky;
+    top: 0;
+}
+
+table thead th:first-child,
+table tbody tr td:first-child {
+    width: 50.4rem;
+}
+
+table tbody {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-height: 61.8rem;
+    overflow: auto; /* Para contornar o problema no Firefox */
+    overflow: overlay; /* Para que o scroll de cima seja substituido pelo certo, mas isso apenas qunado o navegador for o chrome */
+    scrollbar-color: #fff transparent;
+    scrollbar-width: thin;
+}
+table thead th:first-child,
+table tbody tr td:first-child {
+    width: 50.4rem;
+}
+
+table thead th:nth-child(2),
+table tbody tr td:nth-child(2) {
+    width: 21.8rem;
+}
+
+table thead th:nth-child(3),
+table tbody tr td:nth-child(3) {
+    width: 22rem;
+}
+
+table thead th:nth-child(4),
+table tbody tr td:nth-child(4) {
+    width: 20rem;
+}
+
+table thead th,
+table tbody tr td {
+    padding: 1.6rem 4rem;
+}
+
+table tbody tr {
+    display: flex;
+    align-items: center;
+}
+
+table tbody tr td:first-child {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+
+table tbody::-webkit-scrollbar {
+    width: 22px;
+    border-radius: 9999px; /* boda estilo pill button */
+}
+
+table tbody::-webkit-scrollbar-thumb {
+    width: 6px;
+    background-color: transparent; /* para dar o efeito de margin */
+    border-radius: 8rem;
+    box-shadow: inset 0 0 0px 6px var(--btn-fav-standard); /* para dar a cor do scroll*/
+    border: solid 8px transparent; /* para dar o efeito de margin */
+}
+/*  */
+thead tr{
+    background: var(--tableHead-color);
+    text-align: left;
+    border: 1px solid #4A808C;
+
+}
+
+table th{
+    padding-left: 4rem;
+    height: 6.4rem; 
+    
+}
+
+
+tbody td{
+    padding-left: 4rem;
+    
+}
+
+
+tbody th:first-child{
+    border-top-left-radius: 1.2rem;
+    
+    
+}
+
+tbody th:last-child{
+    border-top-right-radius: 1.2rem;
+
+} 
+
+tbody tr:nth-child(odd) {
+    background: rgba(6, 22, 27, 0.5);
+    border: 1px solid #4A808C;
+
+
+}
+
+tbody tr:nth-child(even) {
+    background: #06181C;
+    border: 1px solid #4A808C;
+
+}
+
+tbody .delete{
+    color: var(--btn-remove);
+    cursor: pointer;
+}
+
+
+tbody .emptyFav{
+    height: 45rem;
+    padding: 0;
+    background-color: hsla(194, 81%, 4%, 0.808);
+   
+}
+
+tbody .emptyFav div{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+}
+
+tbody .emptyFav span{
+    color: #4E5455;
+    font-size: 4rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    padding-left: 4rem;
+    height: 10rem;
+}
+
+.user a{
+    text-decoration: none;
+}
+
+.user img {
+    width: 5.6rem;
+    height: 5.6rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user span {
+    font-weight: 400;
+    margin-top: .8rem;
+}
